@@ -1,5 +1,6 @@
 ﻿using Base.Domain.Base.Extends;
 using Base.Domain.Notification.Entities;
+using Base.Domain.Resources;
 
 namespace Base.Domain.Base.ValueObjects
 {
@@ -9,34 +10,20 @@ namespace Base.Domain.Base.ValueObjects
 
         public Documento(string numero)
         {
-            if (string.IsNullOrEmpty(numero))
+            Numero = numero ?? String.Empty;
+
+            if (!SeObrigatorioNaoInformado(string.IsNullOrEmpty(numero), Textos.Documento))
             {
-                Numero = string.Empty;
-                AddMensagem(Mensagem.Error("É obrigatório informar o número do documento (CPF ou CNPJ)."));
-            }
-            else
-            {
-                Numero = numero.RetornaApenasNumeros();
+                Numero = Numero.RetornaApenasNumeros();
 
                 if (Numero.Length == 11)
                 {
-                    if (!ValidarCPF(Numero))
-                    {
-                        AddMensagem(Mensagem.Error("CPF inválido, por favor verificar."));
-                    }
+                    SeValorInvalido(!ValidarCPF(Numero), Textos.CPF);
                 }
                 else if (Numero.Length == 14)
                 {
-                    if (!ValidarCNPJ(Numero))
-                    {
-                        AddMensagem(Mensagem.Error("CNPJ inválido, por favor verificar."));
-                    }
+                    SeValorInvalido(!ValidarCPF(Numero), Textos.CNPJ);
                 }
-            }
-
-            if (Valido() && string.IsNullOrEmpty(Numero))
-            {
-                AddMensagem(Mensagem.Error("Documento inválido, por favor verificar."));
             }
         }
 

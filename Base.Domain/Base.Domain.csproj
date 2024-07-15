@@ -7,17 +7,17 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Update="Notificacao\Resources\TextosMensagens.Designer.cs">
+    <Compile Update="Resources\Textos.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
-      <DependentUpon>TextosMensagens.resx</DependentUpon>
+      <DependentUpon>Textos.resx</DependentUpon>
     </Compile>
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="Notificacao\Resources\TextosMensagens.resx">
+    <EmbeddedResource Update="Resources\Textos.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>TextosMensagens.Designer.cs</LastGenOutput>
+      <LastGenOutput>Textos.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
 

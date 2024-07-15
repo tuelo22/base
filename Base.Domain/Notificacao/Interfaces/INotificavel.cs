@@ -8,8 +8,6 @@ namespace Base.Domain.Notification.Interfaces
 
         void AddMensagens(INotificavel notificavel);
 
-        void AddMensagem(Mensagem mensagem);
-
         void Limpar();
 
         bool Valido();

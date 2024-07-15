@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Base.Domain.Notificacao.Resources {
+namespace Base.Domain.Resources {
     using System;
     
     
@@ -22,14 +22,14 @@ namespace Base.Domain.Notificacao.Resources {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class TextosMensagens {
+    internal class Textos {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal TextosMensagens() {
+        internal Textos() {
         }
         
         /// <summary>
@@ -39,7 +39,7 @@ namespace Base.Domain.Notificacao.Resources {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Base.Domain.Notificacao.Resources.TextosMensagens", typeof(TextosMensagens).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Base.Domain.Resources.Textos", typeof(Textos).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -57,6 +57,51 @@ namespace Base.Domain.Notificacao.Resources {
             }
             set {
                 resourceCulture = value;
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a CNPJ.
+        /// </summary>
+        internal static string CNPJ {
+            get {
+                return ResourceManager.GetString("CNPJ", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a CPF.
+        /// </summary>
+        internal static string CPF {
+            get {
+                return ResourceManager.GetString("CPF", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Descrição.
+        /// </summary>
+        internal static string Descricao {
+            get {
+                return ResourceManager.GetString("Descricao", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Documento.
+        /// </summary>
+        internal static string Documento {
+            get {
+                return ResourceManager.GetString("Documento", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Endereço de e-mail.
+        /// </summary>
+        internal static string Email {
+            get {
+                return ResourceManager.GetString("Email", resourceCulture);
             }
         }
         
@@ -84,6 +129,24 @@ namespace Base.Domain.Notificacao.Resources {
         internal static string Obrigatorio {
             get {
                 return ResourceManager.GetString("Obrigatorio", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a O campo {0} deve possuir no maximo {1} caracteres..
+        /// </summary>
+        internal static string TamanoMaximo {
+            get {
+                return ResourceManager.GetString("TamanoMaximo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a O campo {0} deve possuir entre {1} e  {2} caracteres..
+        /// </summary>
+        internal static string TamanoMinimoMaximo {
+            get {
+                return ResourceManager.GetString("TamanoMinimoMaximo", resourceCulture);
             }
         }
     }

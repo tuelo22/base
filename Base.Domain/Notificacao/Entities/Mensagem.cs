@@ -1,5 +1,5 @@
-﻿using Base.Domain.Notificacao.Resources;
-using Base.Domain.Notification.Enum;
+﻿using Base.Domain.Notification.Enum;
+using Base.Domain.Resources;
 
 namespace Base.Domain.Notification.Entities
 {
@@ -23,21 +23,6 @@ namespace Base.Domain.Notification.Entities
         public static Mensagem Fatal(String mensagem, string? complemento) => new(mensagem, TipoMensagem.Fatal, complemento);
     
         public static bool Sucesso(IReadOnlyCollection<Mensagem> notifications) => !notifications.Any(x => x.Tipo == TipoMensagem.Fatal || x.Tipo == TipoMensagem.Error);
-   
-        public static Mensagem Obrigorio(String Campo, string? complemento = null)
-        {
-            return Error(String.Format(TextosMensagens.Obrigatorio, Campo), complemento);
-        }
-
-        public static Mensagem Inexistente(String Campo, string? complemento = null)
-        {
-            return Error(String.Format(TextosMensagens.Inexistente, Campo), complemento);
-        }
-
-        public static Mensagem Invalido(String Campo, string? complemento = null)
-        {
-            return Error(String.Format(TextosMensagens.Invalido, Campo), complemento);
-        }
-
+  
     }
 }
