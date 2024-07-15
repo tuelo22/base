@@ -1,5 +1,6 @@
 ﻿using Base.Domain.Notification.Interfaces;
 using Base.Domain.Resources;
+using System.Drawing;
 
 namespace Base.Domain.Notification.Entities
 {

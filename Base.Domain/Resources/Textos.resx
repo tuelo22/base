@@ -141,6 +141,9 @@
   <data name="Obrigatorio" xml:space="preserve">
     <value>É obrigatório informar o campo {0}.</value>
   </data>
+  <data name="Sucesso" xml:space="preserve">
+    <value>Operação realizada com sucesso !</value>
+  </data>
   <data name="TamanoMaximo" xml:space="preserve">
     <value>O campo {0} deve possuir no maximo {1} caracteres.</value>
   </data>

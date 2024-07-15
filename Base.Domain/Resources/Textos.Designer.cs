@@ -133,6 +133,15 @@ namespace Base.Domain.Resources {
         }
         
         /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Operação realizada com sucesso !.
+        /// </summary>
+        internal static string Sucesso {
+            get {
+                return ResourceManager.GetString("Sucesso", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a O campo {0} deve possuir no maximo {1} caracteres..
         /// </summary>
         internal static string TamanoMaximo {
