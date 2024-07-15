@@ -16,7 +16,7 @@
 
   <ItemGroup>
     <EmbeddedResource Update="Resources\Textos.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
+      <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Textos.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>

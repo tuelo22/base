@@ -22,7 +22,7 @@ namespace Base.Domain.Resources {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class Textos {
+    public class Textos {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
@@ -36,7 +36,7 @@ namespace Base.Domain.Resources {
         ///   Retorna a instância de ResourceManager armazenada em cache usada por essa classe.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager {
+        public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Base.Domain.Resources.Textos", typeof(Textos).Assembly);
@@ -51,7 +51,7 @@ namespace Base.Domain.Resources {
         ///   pesquisas de recursos que usam essa classe de recurso de tipo de alta segurança.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture {
+        public static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -63,7 +63,7 @@ namespace Base.Domain.Resources {
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a CNPJ.
         /// </summary>
-        internal static string CNPJ {
+        public static string CNPJ {
             get {
                 return ResourceManager.GetString("CNPJ", resourceCulture);
             }
@@ -72,7 +72,7 @@ namespace Base.Domain.Resources {
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a CPF.
         /// </summary>
-        internal static string CPF {
+        public static string CPF {
             get {
                 return ResourceManager.GetString("CPF", resourceCulture);
             }
@@ -81,7 +81,7 @@ namespace Base.Domain.Resources {
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Descrição.
         /// </summary>
-        internal static string Descricao {
+        public static string Descricao {
             get {
                 return ResourceManager.GetString("Descricao", resourceCulture);
             }
@@ -90,7 +90,7 @@ namespace Base.Domain.Resources {
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Documento.
         /// </summary>
-        internal static string Documento {
+        public static string Documento {
             get {
                 return ResourceManager.GetString("Documento", resourceCulture);
             }
@@ -99,7 +99,7 @@ namespace Base.Domain.Resources {
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Endereço de e-mail.
         /// </summary>
-        internal static string Email {
+        public static string Email {
             get {
                 return ResourceManager.GetString("Email", resourceCulture);
             }
@@ -108,7 +108,7 @@ namespace Base.Domain.Resources {
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a {0} inexistente no banco de dados, por favor verificar..
         /// </summary>
-        internal static string Inexistente {
+        public static string Inexistente {
             get {
                 return ResourceManager.GetString("Inexistente", resourceCulture);
             }
@@ -117,7 +117,7 @@ namespace Base.Domain.Resources {
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a O valor do campo {0} está no formato inválido, por favor verificar..
         /// </summary>
-        internal static string Invalido {
+        public static string Invalido {
             get {
                 return ResourceManager.GetString("Invalido", resourceCulture);
             }
@@ -126,7 +126,7 @@ namespace Base.Domain.Resources {
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a É obrigatório informar o campo {0}..
         /// </summary>
-        internal static string Obrigatorio {
+        public static string Obrigatorio {
             get {
                 return ResourceManager.GetString("Obrigatorio", resourceCulture);
             }
@@ -135,7 +135,7 @@ namespace Base.Domain.Resources {
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Operação realizada com sucesso !.
         /// </summary>
-        internal static string Sucesso {
+        public static string Sucesso {
             get {
                 return ResourceManager.GetString("Sucesso", resourceCulture);
             }
@@ -144,7 +144,7 @@ namespace Base.Domain.Resources {
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a O campo {0} deve possuir no maximo {1} caracteres..
         /// </summary>
-        internal static string TamanoMaximo {
+        public static string TamanoMaximo {
             get {
                 return ResourceManager.GetString("TamanoMaximo", resourceCulture);
             }
@@ -153,7 +153,7 @@ namespace Base.Domain.Resources {
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a O campo {0} deve possuir entre {1} e  {2} caracteres..
         /// </summary>
-        internal static string TamanoMinimoMaximo {
+        public static string TamanoMinimoMaximo {
             get {
                 return ResourceManager.GetString("TamanoMinimoMaximo", resourceCulture);
             }
