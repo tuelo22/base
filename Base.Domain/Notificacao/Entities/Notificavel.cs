@@ -15,7 +15,7 @@ namespace Base.Domain.Notification.Entities
             Mensagens.Add(mensagem);
         }
 
-        public void AddMensagens(INotificavel notificavel)
+        protected void AddMensagens(INotificavel notificavel)
         {
             var mensagens = notificavel.GetMensagens().ToList();
 
@@ -32,7 +32,7 @@ namespace Base.Domain.Notification.Entities
             return Mensagem.Sucesso(GetMensagens());
         }
 
-        public Boolean SeObrigatorioNaoInformado(Boolean condicao, string campo)
+        protected Boolean SeObrigatorioNaoInformado(Boolean condicao, string campo)
         {
             if (condicao)
             {
@@ -44,7 +44,7 @@ namespace Base.Domain.Notification.Entities
             return condicao;
         }
 
-        public void SeExcedeTamanhoMaximo(string campo, string texto, int tamanhoMaximo)
+        protected void SeExcedeTamanhoMaximo(string campo, string texto, int tamanhoMaximo)
         {
             if ((!String.IsNullOrEmpty(texto)) && texto.Length > tamanhoMaximo)
             {
@@ -54,7 +54,7 @@ namespace Base.Domain.Notification.Entities
             }
         }
 
-        public void SeInadequadoTamanhoMinimoMaximo(string campo, string texto, int tamanhoMinimo, int tamanhoMaximo)
+        protected void SeInadequadoTamanhoMinimoMaximo(string campo, string texto, int tamanhoMinimo, int tamanhoMaximo)
         {
             if ((!String.IsNullOrEmpty(texto)) && (texto.Length > tamanhoMaximo || texto.Length < tamanhoMinimo))
             {
@@ -64,7 +64,7 @@ namespace Base.Domain.Notification.Entities
             }
         }
 
-        public void SeValorInvalido(Boolean condicao, string campo, string? Complemento = null)
+        protected void SeValorInvalido(Boolean condicao, string campo, string? Complemento = null)
         {
             if (condicao)
             {
@@ -74,7 +74,7 @@ namespace Base.Domain.Notification.Entities
             }
         }
 
-        public void SeValorInexistente(Boolean condicao, string campo, string? Complemento = null)
+        protected void SeValorInexistente(Boolean condicao, string campo, string? Complemento = null)
         {
             if (condicao)
             {

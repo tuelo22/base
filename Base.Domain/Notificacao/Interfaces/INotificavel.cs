@@ -6,8 +6,6 @@ namespace Base.Domain.Notification.Interfaces
     {
         IReadOnlyCollection<Mensagem> GetMensagens();
 
-        void AddMensagens(INotificavel notificavel);
-
         void Limpar();
 
         bool Valido();
