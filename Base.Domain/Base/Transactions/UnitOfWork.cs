@@ -8,5 +8,10 @@ namespace Base.Domain.Base.Transactions
         {
             _context.SaveChanges();
         }
+
+        public async Task CommitAsync()
+        {
+            await _context.SaveChangesAsync();
+        }
     }
 }
