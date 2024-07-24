@@ -22,7 +22,7 @@ namespace Base.Domain.Base.ValueObjects
                 }
                 else if (Numero.Length == 14)
                 {
-                    SeValorInvalido(!ValidarCPF(Numero), Textos.CNPJ);
+                    SeValorInvalido(!ValidarCNPJ(Numero), Textos.CNPJ);
                 }
             }
         }
