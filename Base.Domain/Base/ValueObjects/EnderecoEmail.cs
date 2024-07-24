@@ -4,9 +4,9 @@ using System.Text.RegularExpressions;
 
 namespace Base.Domain.Base.ValueObjects
 {
-    public sealed class EnderecoEmail : Notificavel
+    public class EnderecoEmail : Notificavel
     {
-        public String Endereco { get; private set; }
+        public String Endereco { get; private set; } = String.Empty;
 
         /// <summary>
         /// Ef Core.
@@ -23,7 +23,7 @@ namespace Base.Domain.Base.ValueObjects
 
             if (!SeObrigatorioNaoInformado(String.IsNullOrEmpty(Endereco), Textos.Email))
             {
-               SeValorInvalido(!ValidarEmail(Endereco), Textos.Email)
+                SeValorInvalido(!ValidarEmail(Endereco), Textos.Email);
             }
         }
 

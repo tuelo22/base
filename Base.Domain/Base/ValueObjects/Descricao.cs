@@ -3,9 +3,9 @@ using Base.Domain.Resources;
 
 namespace Base.Domain.Base.ValueObjects
 {
-    public sealed class Descricao : Notificavel
+    public class Descricao : Notificavel
     {
-        public String Valor { get; private set; }
+        public String Valor { get; private set; } = String.Empty;
 
         /// <summary>
         /// Ef Core.
