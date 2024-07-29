@@ -10,6 +10,22 @@ namespace Base.Domain.Base.Repository
        where TId : struct
     {
         /// <summary>
+        /// Realiza include populando o objeto passado por parametro
+        /// </summary>
+        /// <param name="query">Informe o objeto do tipo IQuerable</param>
+        /// <param name="includeProperties">Ínforme o array de expressões que deseja incluir</param>
+        /// <returns></returns>
+        private static IQueryable<TEntidade> Include(IQueryable<TEntidade> query, params Expression<Func<TEntidade, object>>[] includeProperties)
+        {
+            foreach (var property in includeProperties)
+            {
+                query = query.Include(property);
+            }
+
+            return query;
+        }
+
+        /// <summary>
         /// Busca listagem da entidade de acordo com o filtro.
         /// </summary>
         /// <param name="where"></param>
@@ -69,6 +85,11 @@ namespace Base.Domain.Base.Repository
         public IQueryable<TEntidade> Listar(params Expression<Func<TEntidade, object>>[] includeProperties)
         {
             IQueryable<TEntidade> query = _context.Set<TEntidade>();
+
+            if (includeProperties.Any())
+            {
+                return Include(_context.Set<TEntidade>(), includeProperties);
+            }
 
             return query;
         }
@@ -150,27 +171,15 @@ namespace Base.Domain.Base.Repository
         }
 
         /// <summary>
-        ///  Converte Func para Expression.
-        /// </summary>
-        /// <param name="predicate"></param>
-        /// <returns></returns>
-        private static Expression<Func<TEntidade, bool>> ToExpression(Func<TEntidade, bool> predicate)
-        {
-            return entity => predicate(entity);
-        }
-
-        /// <summary>
         ///  Busca a entidade de acordo com o filtro assincrono.
         /// </summary>
         /// <param name="where"></param>
         /// <param name="cancellationToken"></param>
         /// <param name="includeProperties"></param>
         /// <returns></returns>
-        public async Task<TEntidade?> ObterPorAsync(Func<TEntidade, bool> where, CancellationToken cancellationToken = default, params Expression<Func<TEntidade, object>>[] includeProperties)
+        public async Task<TEntidade?> ObterPorAsync(Expression<Func<TEntidade, bool>> where, CancellationToken cancellationToken = default, params Expression<Func<TEntidade, object>>[] includeProperties)
         {
-            var whereExpression = ToExpression(where);
-
-            return await Listar(includeProperties).FirstOrDefaultAsync(whereExpression, cancellationToken);
+            return await Listar(includeProperties).FirstOrDefaultAsync(where, cancellationToken);
         }
 
         /// <summary>
@@ -182,11 +191,9 @@ namespace Base.Domain.Base.Repository
         /// <returns></returns>
         public async Task<TEntidade?> ObterPorIdAsync(TId id, CancellationToken cancellationToken = default, params Expression<Func<TEntidade, object>>[] includeProperties)
         {
-            var whereExpression = ToExpression(x => x.Id.ToString() == id.ToString());
-
             if (includeProperties.Length != 0)
             {
-                return await Listar(includeProperties).FirstOrDefaultAsync(whereExpression, cancellationToken);
+                return await Listar(includeProperties).FirstOrDefaultAsync(x => x.Id.ToString() == id.ToString(), cancellationToken);
             }
 
             return await _context.Set<TEntidade>().FindAsync(id);
@@ -197,11 +204,9 @@ namespace Base.Domain.Base.Repository
         /// </summary>
         /// <param name="where"></param>
         /// <returns></returns>
-        public async Task<bool> ExisteAsync(Func<TEntidade, bool> where, CancellationToken cancellationToken = default)
+        public async Task<bool> ExisteAsync(Expression<Func<TEntidade, bool>> where, CancellationToken cancellationToken = default)
         {
-            var whereExpression = ToExpression(where);
-
-            return await _context.Set<TEntidade>().AnyAsync(whereExpression, cancellationToken);
+            return await _context.Set<TEntidade>().AnyAsync(where, cancellationToken);
         }
 
         /// <summary>

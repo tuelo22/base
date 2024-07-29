@@ -30,11 +30,11 @@ namespace Base.Domain.Base.Interfaces.Repositories
 
         IEnumerable<TEntidade> AdicionarLista(IEnumerable<TEntidade> entidades);
 
-        Task<TEntidade?> ObterPorAsync(Func<TEntidade, bool> where, CancellationToken cancellationToken = default, params Expression<Func<TEntidade, object>>[] includeProperties);
+        Task<TEntidade?> ObterPorAsync(Expression<Func<TEntidade, bool>> where, CancellationToken cancellationToken = default, params Expression<Func<TEntidade, object>>[] includeProperties);
 
         Task<TEntidade?> ObterPorIdAsync(TId id, CancellationToken cancellationToken = default, params Expression<Func<TEntidade, object>>[] includeProperties);
 
-        Task<bool> ExisteAsync(Func<TEntidade, bool> where, CancellationToken cancellationToken = default);
+        Task<bool> ExisteAsync(Expression<Func<TEntidade, bool>> where, CancellationToken cancellationToken = default);
 
         Task<TEntidade> AdicionarAsync(TEntidade entidade);
     }
