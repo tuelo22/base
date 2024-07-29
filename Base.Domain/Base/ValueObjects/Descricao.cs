@@ -32,5 +32,9 @@ namespace Base.Domain.Base.ValueObjects
         {
             return Valor;
         }
+
+        public static implicit operator string(Descricao descricao) => descricao.Valor;
+
+        public static implicit operator Descricao(string descricao) => new(descricao);
     }
 }
