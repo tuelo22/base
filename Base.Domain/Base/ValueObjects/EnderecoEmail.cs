@@ -37,5 +37,9 @@ namespace Base.Domain.Base.ValueObjects
             string pattern = @"^[^@\s]+@[^@\s]+\.[^@\s]+$";
             return Regex.IsMatch(endereco, pattern, RegexOptions.IgnoreCase);
         }
+
+        public static implicit operator String(EnderecoEmail email) => email.Endereco;
+
+        public static implicit operator EnderecoEmail(String valor) => new(valor);
     }
 }

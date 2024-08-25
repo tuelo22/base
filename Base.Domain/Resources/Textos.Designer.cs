@@ -124,6 +124,15 @@ namespace Base.Domain.Resources {
         }
         
         /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Monetario.
+        /// </summary>
+        public static string Monetario {
+            get {
+                return ResourceManager.GetString("Monetario", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a É obrigatório informar o campo {0}..
         /// </summary>
         public static string Obrigatorio {
@@ -156,6 +165,15 @@ namespace Base.Domain.Resources {
         public static string TamanoMinimoMaximo {
             get {
                 return ResourceManager.GetString("TamanoMinimoMaximo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Telefone.
+        /// </summary>
+        public static string Telefone {
+            get {
+                return ResourceManager.GetString("Telefone", resourceCulture);
             }
         }
     }

@@ -138,6 +138,9 @@
   <data name="Invalido" xml:space="preserve">
     <value>O valor do campo {0} está no formato inválido, por favor verificar.</value>
   </data>
+  <data name="Monetario" xml:space="preserve">
+    <value>Monetario</value>
+  </data>
   <data name="Obrigatorio" xml:space="preserve">
     <value>É obrigatório informar o campo {0}.</value>
   </data>
@@ -149,5 +152,8 @@
   </data>
   <data name="TamanoMinimoMaximo" xml:space="preserve">
     <value>O campo {0} deve possuir entre {1} e  {2} caracteres.</value>
+  </data>
+  <data name="Telefone" xml:space="preserve">
+    <value>Telefone</value>
   </data>
 </root>
