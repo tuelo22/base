@@ -144,6 +144,9 @@
   <data name="Obrigatorio" xml:space="preserve">
     <value>É obrigatório informar o campo {0}.</value>
   </data>
+  <data name="Observacao" xml:space="preserve">
+    <value>Observação</value>
+  </data>
   <data name="Sucesso" xml:space="preserve">
     <value>Operação realizada com sucesso !</value>
   </data>

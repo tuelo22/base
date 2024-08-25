@@ -142,6 +142,15 @@ namespace Base.Domain.Resources {
         }
         
         /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Observação.
+        /// </summary>
+        public static string Observacao {
+            get {
+                return ResourceManager.GetString("Observacao", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Operação realizada com sucesso !.
         /// </summary>
         public static string Sucesso {
