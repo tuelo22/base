@@ -32,13 +32,13 @@ namespace Base.Domain.Notification.Entities
             return Mensagem.Sucesso(GetMensagens());
         }
 
-        protected Boolean SeObrigatorioNaoInformado(Boolean condicao, string campo)
+        protected Boolean SeObrigatorioNaoInformado(Boolean condicao, string campo, string? complemento = null)
         {
             if (condicao)
             {
                 var mensagem = String.Format(Textos.Obrigatorio, campo);
 
-                AddMensagem(Mensagem.Error(mensagem));
+                AddMensagem(Mensagem.Error(mensagem, complemento));
             }
 
             return condicao;
@@ -64,7 +64,7 @@ namespace Base.Domain.Notification.Entities
             }
         }
 
-        protected void SeValorInvalido(Boolean condicao, string campo, string? Complemento = null)
+        protected bool SeValorInvalido(Boolean condicao, string campo, string? Complemento = null)
         {
             if (condicao)
             {
@@ -72,9 +72,11 @@ namespace Base.Domain.Notification.Entities
 
                 AddMensagem(Mensagem.Error(mensagem, Complemento));
             }
+
+            return condicao;
         }
 
-        protected void SeValorInexistente(Boolean condicao, string campo, string? Complemento = null)
+        protected bool SeValorInexistente(Boolean condicao, string campo, string? Complemento = null)
         {
             if (condicao)
             {
@@ -82,6 +84,8 @@ namespace Base.Domain.Notification.Entities
 
                 AddMensagem(Mensagem.Error(mensagem, Complemento));
             }
+
+            return condicao;
         }
     }
 }

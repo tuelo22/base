@@ -4,6 +4,6 @@ namespace Base.Domain.Base.Interfaces.Services
 {
     public interface IGravacaoService : IServiceBase
     {
-        public ResponseBaseDTO Gravar(RequestBaseDTO dto);
+        ResponseBaseDTO Gravar(RequestBaseDTO dto);
     }
 }

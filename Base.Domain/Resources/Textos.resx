@@ -123,6 +123,9 @@
   <data name="CPF" xml:space="preserve">
     <value>CPF</value>
   </data>
+  <data name="Data" xml:space="preserve">
+    <value>Data</value>
+  </data>
   <data name="Descricao" xml:space="preserve">
     <value>Descrição</value>
   </data>
