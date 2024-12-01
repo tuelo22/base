@@ -15,7 +15,7 @@ namespace Base.Domain.Base.Repository
         /// <param name="query">Informe o objeto do tipo IQuerable</param>
         /// <param name="includeProperties">Ínforme o array de expressões que deseja incluir</param>
         /// <returns></returns>
-        private static IQueryable<TEntidade> Include(IQueryable<TEntidade> query, params Expression<Func<TEntidade, object>>[] includeProperties)
+        protected static IQueryable<TEntidade> Include(IQueryable<TEntidade> query, params Expression<Func<TEntidade, object>>[] includeProperties)
         {
             foreach (var property in includeProperties)
             {

@@ -24,7 +24,7 @@ namespace Base.Domain.Base.ValueObjects
 
             if(!SeObrigatorioNaoInformado(String.IsNullOrEmpty(valor), Textos.Descricao))
             {
-                SeInadequadoTamanhoMinimoMaximo(Textos.Descricao, valor, 20, 255);
+                SeInadequadoTamanhoMinimoMaximo(Textos.Descricao, valor, 5, 255);
             }            
         }
 

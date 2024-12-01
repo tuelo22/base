@@ -38,6 +38,30 @@ namespace Base.Domain.Base.Controller
         }
 
         /// <summary>
+        /// Método de resposta padrão.
+        /// </summary>
+        protected IActionResult ResponseAPI(object result, IServiceBase serviceBase)
+        {
+            if (serviceBase.Valido())
+            {
+                try
+                {
+                    _unitOfWork.Commit();
+
+                    return result != null ? Ok(result) : NoContent();
+                }
+                catch (Exception ex)
+                {
+                    return ResponseAPIException(ex);
+                }
+            }
+            else
+            {
+                return BadRequest(result);
+            }
+        }
+
+        /// <summary>
         /// Método de resposta padrão assincrono.
         /// </summary>
         protected async Task<IActionResult> ResponseAPIAsync(ResponseBaseDTO result, IServiceBase serviceBase)
@@ -81,6 +105,11 @@ namespace Base.Domain.Base.Controller
             // Obtém o token JWT do cabeçalho de autorização
             var authHeader = HttpContext.Request.Headers["Authorization"].ToString();
             var token = authHeader.StartsWith("Bearer ") ? authHeader.Substring("Bearer ".Length).Trim() : authHeader;
+
+            if(string.IsNullOrEmpty(token))
+            {
+                return Guid.Empty;
+            }
 
             // Decodifica o token JWT
             var handler = new JwtSecurityTokenHandler();
