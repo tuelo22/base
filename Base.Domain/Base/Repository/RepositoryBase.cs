@@ -189,7 +189,7 @@ namespace Base.Domain.Base.Repository
         /// <param name="cancellationToken"></param>
         /// <param name="includeProperties"></param>
         /// <returns></returns>
-        public async Task<TEntidade?> ObterPorIdAsync(TId id, CancellationToken cancellationToken = default, params Expression<Func<TEntidade, object>>[] includeProperties)
+        public virtual async Task<TEntidade?> ObterPorIdAsync(TId id, CancellationToken cancellationToken = default, params Expression<Func<TEntidade, object>>[] includeProperties)
         {
             if (includeProperties.Length != 0)
             {

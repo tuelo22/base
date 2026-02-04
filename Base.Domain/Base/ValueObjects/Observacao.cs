@@ -1,5 +1,7 @@
 ﻿using Base.Domain.Base.Entities;
 using Base.Domain.Resources;
+using Microsoft.Extensions.Options;
+using System.Runtime.CompilerServices;
 
 namespace Base.Domain.Base.ValueObjects
 {

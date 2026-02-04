@@ -23,6 +23,20 @@ namespace Base.Domain.Notification.Entities
         public static Mensagem Fatal(String mensagem, string? complemento) => new(mensagem, TipoMensagem.Fatal, complemento);
     
         public static bool Sucesso(IReadOnlyCollection<Mensagem> notifications) => !notifications.Any(x => x.Tipo == TipoMensagem.Fatal || x.Tipo == TipoMensagem.Error);
-  
+
+
+        public bool Equals(Mensagem? other)
+        {
+            if (other is null) return false;
+            return Texto == other.Texto &&
+                   Complemento == other.Complemento &&
+                   Tipo == other.Tipo;
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as Mensagem);
+
+        public override int GetHashCode() => HashCode.Combine(Texto, Complemento, Tipo);
     }
 }
+
+

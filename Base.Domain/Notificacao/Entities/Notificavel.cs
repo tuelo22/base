@@ -1,6 +1,5 @@
 ﻿using Base.Domain.Notification.Interfaces;
 using Base.Domain.Resources;
-using System.Drawing;
 
 namespace Base.Domain.Notification.Entities
 {
@@ -8,7 +7,7 @@ namespace Base.Domain.Notification.Entities
     {
         private readonly List<Mensagem> Mensagens = [];
 
-        public virtual IReadOnlyCollection<Mensagem> GetMensagens() => Mensagens;
+        public virtual IReadOnlyCollection<Mensagem> GetMensagens() => Mensagens.Distinct().ToList();
 
         protected void AddMensagem(Mensagem mensagem)
         {
