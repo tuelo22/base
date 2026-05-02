@@ -62,7 +62,32 @@ namespace Base.Domain.Base.Controller
         }
 
         /// <summary>
-        /// Método de resposta padrão assincrono.
+        /// Método de resposta padrão assincrono com retorno de lista.
+        /// </summary>
+        protected async Task<IActionResult> ResponseAPIAsync(object result, IServiceBase serviceBase)
+        {
+
+            if (serviceBase.Valido())
+            {
+                try
+                {
+                    await _unitOfWork.CommitAsync();
+
+                    return result != null ? Ok(result) : NoContent();
+                }
+                catch (Exception ex)
+                {
+                    return ResponseAPIException(ex);
+                }
+            }
+            else
+            {
+                return BadRequest(result);
+            }
+        }
+
+        /// <summary>
+        /// Método de resposta padrão assincrono com response base.
         /// </summary>
         protected async Task<IActionResult> ResponseAPIAsync(ResponseBaseDTO result, IServiceBase serviceBase)
         {
