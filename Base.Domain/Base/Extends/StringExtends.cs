@@ -16,5 +16,26 @@ namespace Base.Domain.Base.Extends
             byte[] bytes = SHA256.HashData(Encoding.UTF8.GetBytes(input));
             return BitConverter.ToString(bytes).Replace("-", "").ToLower();
         }
+
+        public static DateTime RetoraUltimaDiaCompetencia(this string input)
+        {
+            try
+            {
+                DateOnly dataInicial = DateOnly.ParseExact(input, "MM/yyyy");
+
+                int ultimoDia = DateTime.DaysInMonth(dataInicial.Year, dataInicial.Month);
+
+                return new DateTime(dataInicial.Year, dataInicial.Month, ultimoDia);
+            }
+            catch
+            {
+                DateTime data = DateTime.Now;
+
+                int ultimoDia = DateTime.DaysInMonth(data.Year, data.Month);
+
+                return new DateTime(data.Year, data.Month, ultimoDia);
+            }           
+
+        }
     }
 }

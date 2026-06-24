@@ -66,7 +66,7 @@ namespace Base.Domain.Base.Controller
         /// <summary>
         /// Método de resposta padrão assincrono com retorno de lista.
         /// </summary>
-        protected async Task<IActionResult> ResponseAPIAsync(object result, IServiceBase serviceBase)
+        protected async Task<IActionResult> ResponseAPIAsync(object? result, IServiceBase serviceBase)
         {
 
             if (serviceBase.Valido())
