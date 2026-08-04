@@ -2,6 +2,8 @@
 using Base.Domain.Base.Interfaces.Services;
 using Base.Domain.Base.Interfaces.Transactions;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
 using System.IdentityModel.Tokens.Jwt;
 
 namespace Base.Domain.Base.Controller
@@ -117,6 +119,9 @@ namespace Base.Domain.Base.Controller
         /// </summary>
         protected IActionResult ResponseAPIException(Exception ex)
         {
+            HttpContext.RequestServices.GetRequiredService<ILogger<ControllerAPIBase>>()
+                .LogError(ex, "Erro não tratado em {Controller}", GetType().Name);
+
             return StatusCode(500, new { errors = $"Houve um problema interno com o servidor. Entre em contato com o Administrador do sistema caso o problema persista. Erro interno: {ex.Message}", exception = ex.ToString() });
         }
 

@@ -7,7 +7,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.Mvc.Core" Version="2.2.5" />
+    <!-- Substitui o antigo PackageReference Microsoft.AspNetCore.Mvc.Core 2.2.5 (descontinuado,
+         arrastava dependências transitivas incompatíveis com publish self-contained/RID-specific).
+         FrameworkReference dá acesso a ControllerBase e afins direto do runtime ASP.NET Core
+         instalado, sem puxar pacote NuGet nenhum. -->
+    <FrameworkReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.8" />
     <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="8.1.1" />
   </ItemGroup>
